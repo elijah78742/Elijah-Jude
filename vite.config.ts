@@ -5,6 +5,13 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // =========================================================================
+    // GitHub Pages Deployment Configuration:
+    // To deploy to https://<USERNAME>.github.io/<YOUR-REPOSITORY-NAME>/
+    // replace the base value below with: base: '/YOUR-REPOSITORY-NAME/'
+    // By default, it uses VITE_BASE_PATH environment variable or root '/'
+    // =========================================================================
+    base: process.env.VITE_BASE_PATH || '/', // Replace with base: '/YOUR-REPOSITORY-NAME/' if hardcoding
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
