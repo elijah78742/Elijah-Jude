@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Life Comprehensive College (NLCC) - Pure HTML/CSS/JS</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement Ribbon -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <span class="top-bar-badge">Admissions 2026</span>
+        <span>JSS1 & SS1 placement registration is now open for the upcoming academic session.</span>
+      </div>
+      <div>
+        <span>Call: +234 803 344 5566 | Soka Campground, Ibadan</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">N</div>
+        <div class="brand-text">
+          <h1>New Life College</h1>
+          <span>Excellence & Character</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#about" class="active">Home</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#staff">Faculty</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display: flex; gap: 0.75rem;">
+        <button class="btn btn-outline" data-open-modal="portal-modal">Student Portal</button>
+        <button class="btn btn-yellow" data-open-modal="admission-modal">Apply Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Building Academic Giants<br>& Godly Character</h2>
+      <p>Situated in the distraction-free environment of New Life Campground, Soka, Ibadan. We nurture secondary school students into responsible, confident world leaders.</p>
+      <div class="hero-actions">
+        <button class="btn btn-yellow" data-open-modal="admission-modal">Begin 2026 Registration</button>
+        <a href="#academics" class="btn btn-outline">Explore Curriculum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Strip -->
+  <div class="highlights-strip">
+    <div class="container highlights-grid">
+      <div class="highlight-item">
+        <span>Founded</span>
+        <strong>1998</strong>
+      </div>
+      <div class="highlight-item">
+        <span>WAEC Pass Rate</span>
+        <strong>99.4%</strong>
+      </div>
+      <div class="highlight-item">
+        <span>Student-Teacher Ratio</span>
+        <strong>15 : 1</strong>
+      </div>
+      <div class="highlight-item">
+        <span>Science & ICT Labs</span>
+        <strong>100% Equipped</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Welcome to New Life Comprehensive College</h3>
+        <p>A premier co-educational secondary school delivering holistic cognitive, moral, and vocational excellence in Oyo State.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Distraction-Free Campus</h4>
+          <p>Our expansive Soka Campground facility provides clean air, top-tier security, modern athletic courts, and quiet surroundings conducive to intensive academic study.</p>
+        </div>
+        <div class="card">
+          <h4>Dual-Curriculum Mastery</h4>
+          <p>We blend standard Nigerian NERDC syllabus requirements with international STEM best practices, preparing students for BECE, WASSCE, NECO, JAMB, and Cambridge checkpoints.</p>
+        </div>
+        <div class="card">
+          <h4>Pastoral & Moral Mentorship</h4>
+          <p>Every student is paired with a faculty advisor who tracks character traits, discipline, emotional wellness, and daily punctuality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academics Section -->
+  <section id="academics" class="section section-bg">
+    <div class="container">
+      <div class="section-title">
+        <h3>Academic Schools & Departments</h3>
+        <p>Comprehensive subject pathways tailored to individual strengths and future career ambitions.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Junior Secondary (JSS 1-3)</h4>
+          <p>Focuses on foundational numeracy, literacy, Basic Science & Technology, Pre-vocational studies, and National Values Education.</p>
+        </div>
+        <div class="card">
+          <h4>Senior Science & Tech</h4>
+          <p>Rigorous instruction in Further Mathematics, Physics, Chemistry, Biology, Technical Drawing, and Computer ICT Coding.</p>
+        </div>
+        <div class="card">
+          <h4>Arts, Humanities & Commerce</h4>
+          <p>Preparatory tracks in Literature-in-English, Government, Financial Accounting, Economics, and Business Management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Faculty Section -->
+  <section id="staff" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h3>Certified Faculty Directory</h3>
+        <p>Use the buttons below to filter our staff members by academic department (powered by pure Vanilla JS).</p>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Faculty</button>
+        <button class="filter-btn" data-filter="science">Science & Tech</button>
+        <button class="filter-btn" data-filter="arts">Arts & Humanities</button>
+      </div>
+      <div class="grid-3">
+        <div class="card filterable-item" data-category="science">
+          <h4>Mr. Babatunde Adeyemi</h4>
+          <p style="color: var(--primary-blue); font-weight: 700;">HOD Sciences & Senior Physics</p>
+          <p>B.Sc. Physics, M.Ed. Curriculum Design. Over 14 years of mentoring Olympiad winners.</p>
+        </div>
+        <div class="card filterable-item" data-category="science">
+          <h4>Mrs. Ngozi Okafor</h4>
+          <p style="color: var(--primary-blue); font-weight: 700;">Senior Chemistry Instructor</p>
+          <p>B.Sc. Industrial Chemistry, PGDE. Specialist in practical laboratory titrations.</p>
+        </div>
+        <div class="card filterable-item" data-category="arts">
+          <h4>Dr. Folake Balogun</h4>
+          <p style="color: var(--primary-blue); font-weight: 700;">Literature & English Head</p>
+          <p>Ph.D. African Literature. Coach of the NLCC Oyo State Championship Debate Team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Section -->
+  <section id="faq" class="section section-bg">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-title">
+        <h3>Frequently Asked Questions</h3>
+        <p>Click on any question below to toggle the answer.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is the cost of the admission application form? <span>+</span></button>
+        <div class="faq-answer">The non-refundable entrance examination application form fee is ₦5,000 only, payable online or at our Soka Campground admin desk.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">When is the entrance examination scheduled? <span>+</span></button>
+        <div class="faq-answer">Our first batch entrance examination takes place on Saturday, July 11, 2026 at the College Hall starting promptly at 9:00 AM.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you offer boarding or hostel accommodations? <span>+</span></button>
+        <div class="faq-answer">Currently, NLCC operates primarily as an intensive day school with structured supervised afternoon prep classes until 4:00 PM.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container" style="max-width: 650px;">
+      <div class="section-title">
+        <h3>Contact Admissions Desk</h3>
+        <p>Send an instant message directly to our registry office.</p>
+      </div>
+      <div id="form-feedback" style="display:none; padding: 1rem; background: #ECFDF5; color: #065F46; border: 1px solid #10B981; border-radius: 8px; margin-bottom: 1.5rem;"></div>
+      <form id="vanilla-contact-form">
+        <div class="form-group">
+          <label>Full Parent Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Chief & Mrs. Adeleke" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control" placeholder="parent@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" class="form-control" placeholder="+234 803 000 0000" required>
+        </div>
+        <div class="form-group">
+          <label>Message / Inquiry</label>
+          <textarea class="form-control" rows="4" placeholder="How can we assist your child's placement?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-yellow" style="width: 100%; justify-content: center;">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>New Life Comprehensive College</h5>
+          <p>New Life Campground, Soka Area, off Lagos-Ibadan Expressway, Ibadan, Oyo State, Nigeria.</p>
+          <p style="margin-top: 0.5rem;">Tel: +234 803 344 5566</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About Our Campus</a></li>
+            <li><a href="#academics">Academic Curriculum</a></li>
+            <li><a href="#admissions">Fee Structure</a></li>
+            <li><a href="#staff">Faculty List</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Built with Pure Web Standard</h5>
+          <p>This export contains 100% standard HTML5, CSS3, and Vanilla JavaScript with zero external frameworks or dependencies.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 New Life Comprehensive College. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admission Modal -->
+  <div id="admission-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Online Admission Form</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Complete candidate preliminary biodata to secure entrance examination placement.</p>
+      <form onSubmit="event.preventDefault(); alert('Simulated Vanilla Application Received!');">
+        <div class="form-group">
+          <label>Candidate Full Name</label>
+          <input type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Proposed Entry Class</label>
+          <select class="form-control">
+            <option>JSS 1 (Primary 6 leaver)</option>
+            <option>JSS 2 Transfer</option>
+            <option>SS 1 Science</option>
+            <option>SS 1 Arts / Commercial</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-yellow" style="width: 100%; justify-content: center; margin-top: 1rem;">Complete Registration</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Portal Modal -->
+  <div id="portal-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Student & Parent Portal</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Access terminal result slips, attendance logs, and fee invoices.</p>
+      <form onSubmit="event.preventDefault(); alert('Vanilla Portal Login Simulated.');">
+        <div class="form-group">
+          <label>Admission Number / Email</label>
+          <input type="text" class="form-control" placeholder="NLCC/2026/001" required>
+        </div>
+        <div class="form-group">
+          <label>Password / Pin</label>
+          <input type="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-yellow" style="width: 100%; justify-content: center; margin-top: 1rem;">Log into Portal</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

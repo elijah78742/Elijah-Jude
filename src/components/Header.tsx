@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Search, GraduationCap, Lock, ArrowRight, BookOpen, User, Phone, Info } from 'lucide-react';
+import { Menu, X, Search, GraduationCap, Lock, ArrowRight, BookOpen, User, Phone, Info, Code } from 'lucide-react';
 import { schoolInfo } from '../data';
 
 interface HeaderProps {
@@ -8,6 +8,7 @@ interface HeaderProps {
   setActivePage: (page: string) => void;
   onOpenPortal: (tab?: 'student' | 'parent') => void;
   onOpenAdmission: () => void;
+  onOpenVanilla?: () => void;
 }
 
 interface SearchResult {
@@ -17,7 +18,7 @@ interface SearchResult {
   targetPage: string;
 }
 
-export default function Header({ activePage, setActivePage, onOpenPortal, onOpenAdmission }: HeaderProps) {
+export default function Header({ activePage, setActivePage, onOpenPortal, onOpenAdmission, onOpenVanilla }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -146,7 +147,19 @@ export default function Header({ activePage, setActivePage, onOpenPortal, onOpen
             </nav>
 
             {/* Desktop Action Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2.5">
+              {/* Pure HTML/CSS/JS Mode Trigger */}
+              {onOpenVanilla && (
+                <button
+                  onClick={onOpenVanilla}
+                  className="flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 font-bold text-xs py-2 px-3 rounded-lg transition-all cursor-pointer shadow-sm"
+                  title="View pure HTML, CSS and JavaScript source code"
+                >
+                  <Code className="w-3.5 h-3.5 text-amber-600" />
+                  HTML/JS Code
+                </button>
+              )}
+
               {/* Search Trigger */}
               <button
                 onClick={() => setIsSearchOpen(true)}

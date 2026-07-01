@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageCircle, GraduationCap, Clock, Phone, MapPin } from 'lucide-react';
+import { MessageCircle, GraduationCap, Clock, Phone, MapPin, Code } from 'lucide-react';
 import AnnouncementBar from './components/AnnouncementBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PortalsModal from './components/PortalsModal';
 import AdmissionFormModal from './components/AdmissionFormModal';
+import VanillaCodeModal from './components/VanillaCodeModal';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Academics from './pages/Academics';
@@ -20,6 +21,7 @@ export default function App() {
   const [isPortalModalOpen, setIsPortalModalOpen] = useState(false);
   const [portalDefaultTab, setPortalDefaultTab] = useState<'student' | 'parent'>('student');
   const [isAdmissionModalOpen, setIsAdmissionModalOpen] = useState(false);
+  const [isVanillaModalOpen, setIsVanillaModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Monitor scroll height to toggle the scroll-to-top button
@@ -82,6 +84,7 @@ export default function App() {
         setActivePage={setActivePage}
         onOpenPortal={handleOpenPortal}
         onOpenAdmission={handleOpenAdmission}
+        onOpenVanilla={() => setIsVanillaModalOpen(true)}
       />
 
       {/* 3. Main Page views with responsive entry animation container */}
@@ -106,7 +109,7 @@ export default function App() {
         onOpenAdmission={handleOpenAdmission}
       />
 
-      {/* 5. Modals for Admissions and Portal simulations */}
+      {/* 5. Modals for Admissions, Portal simulations and Vanilla Code Studio */}
       <PortalsModal
         isOpen={isPortalModalOpen}
         onClose={() => setIsPortalModalOpen(false)}
@@ -118,7 +121,28 @@ export default function App() {
         onClose={() => setIsAdmissionModalOpen(false)}
       />
 
+      <VanillaCodeModal
+        isOpen={isVanillaModalOpen}
+        onClose={() => setIsVanillaModalOpen(false)}
+      />
+
       {/* 6. Floating Action Widgets */}
+      {/* Floating Pure HTML/CSS/JS Viewer Button (Bottom Left) */}
+      <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-2">
+        <button
+          onClick={() => setIsVanillaModalOpen(true)}
+          className="bg-slate-900 hover:bg-slate-800 text-school-yellow border-2 border-school-yellow/60 font-display font-black text-xs py-3 px-5 rounded-2xl shadow-2xl flex items-center gap-2.5 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-pointer group"
+        >
+          <div className="w-6 h-6 rounded-lg bg-school-yellow text-school-blue flex items-center justify-center font-bold">
+            <Code className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <span className="block text-white text-[11px] leading-tight font-extrabold">View HTML, CSS & JS Only</span>
+            <span className="block text-[9px] text-school-yellow font-mono">100% Vanilla Code Export</span>
+          </div>
+        </button>
+      </div>
+
       {/* WhatsApp Quick Chat bubble */}
       <a
         href={`https://wa.me/${schoolInfo.whatsapp.replace('+', '')}`}
